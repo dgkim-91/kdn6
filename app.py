@@ -280,6 +280,109 @@ def render_news():
 # ── 앱 시작 ─────────────────────────────────────────────
 st.set_page_config(page_title="KDN 전력 분석", page_icon="⚡", layout="wide")
 
+st.markdown("""
+<style>
+/* ── 전체 배경 ── */
+.stApp { background-color: #0B1E3D; }
+
+/* ── 탭 스타일 ── */
+.stTabs [data-baseweb="tab-list"] {
+    background: #112B52;
+    border-radius: 10px;
+    padding: 4px 8px;
+    gap: 4px;
+}
+.stTabs [data-baseweb="tab"] {
+    color: #8AACDF;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+}
+.stTabs [aria-selected="true"] {
+    background: #4169E1 !important;
+    color: #FFFFFF !important;
+}
+.stTabs [data-baseweb="tab-highlight"] { background: transparent !important; }
+
+/* ── 버튼 ── */
+.stButton > button {
+    background: linear-gradient(135deg, #4169E1, #1E3A8A);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+.stButton > button:hover {
+    background: linear-gradient(135deg, #5A7FFF, #2B52CC);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(65,105,225,0.5);
+}
+
+/* ── 메트릭 카드 ── */
+[data-testid="metric-container"] {
+    background: #112B52;
+    border: 1px solid #1E4080;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+[data-testid="metric-container"] label { color: #8AACDF !important; font-size: 13px; }
+[data-testid="metric-container"] [data-testid="stMetricValue"] {
+    color: #FFFFFF !important;
+    font-size: 28px !important;
+    font-weight: 700;
+}
+[data-testid="metric-container"] [data-testid="stMetricDelta"] { font-size: 13px; }
+
+/* ── 입력 필드 ── */
+.stTextInput > div > div > input,
+.stSelectbox > div > div,
+.stNumberInput > div > div > input {
+    background: #112B52 !important;
+    border: 1px solid #1E4080 !important;
+    border-radius: 8px !important;
+    color: #D6E4FF !important;
+}
+
+/* ── 파일 업로더 ── */
+[data-testid="stFileUploader"] {
+    background: #112B52;
+    border: 2px dashed #4169E1;
+    border-radius: 10px;
+}
+
+/* ── 구분선 ── */
+hr { border-color: #1E4080 !important; opacity: 0.5; }
+
+/* ── 사이드바 ── */
+[data-testid="stSidebar"] { background: #0D2242 !important; }
+[data-testid="stSidebar"] * { color: #D6E4FF !important; }
+
+/* ── 채팅 메시지 ── */
+[data-testid="stChatMessage"] {
+    background: #112B52;
+    border-radius: 12px;
+    border: 1px solid #1E4080;
+}
+
+/* ── 데이터프레임 ── */
+[data-testid="stDataFrame"] { border: 1px solid #1E4080; border-radius: 8px; }
+
+/* ── expander ── */
+.streamlit-expanderHeader {
+    background: #112B52 !important;
+    border-radius: 8px !important;
+    color: #D6E4FF !important;
+}
+
+/* ── 제목 ── */
+h1 { color: #7EB3FF !important; }
+h2, h3 { color: #5A9BFF !important; }
+</style>
+""", unsafe_allow_html=True)
+
 tab_dash, tab_news, tab_settings, tab_chat = st.tabs([
     "⚡ 전력 대시보드", "🎣 낚시 뉴스", "⚙️ 설정", "💬 대화"
 ])

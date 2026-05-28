@@ -1,0 +1,6 @@
+[theme]
+primaryColor        = "#4169E1"   # Royal Blue
+backgroundColor     = "#0B1E3D"   # Dark Blue (배경)
+secondaryBackgroundColor = "#112B52"  # Dark Blue (사이드바·위젯)
+textColor           = "#D6E4FF"   # 밝은 블루-화이트
+font                = "sans serif"
